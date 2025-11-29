@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy - Meus Conteúdos!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .popup {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .popup-content {
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 40px 35px;
+            border-radius: 24px;
+            text-align: center;
+            color: #1a1a1a;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+                        0 0 0 1px rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 2;
+            animation: slideUp 0.4s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .popup-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35),
+                        0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+
+        .popup-content img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 4px solid #fff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .popup-content:hover img {
+            transform: scale(1.05);
+        }
+
+        .popup-content h2 {
+            margin: 15px 0 10px 0;
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.3;
+        }
+
+        .popup-content p {
+            margin: 10px 0 25px 0;
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .popup-content input[type="password"] {
+            width: 100%;
+            padding: 14px 18px;
+            margin: 15px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            background: #fff;
+            color: #1a1a1a;
+        }
+
+        .popup-content input[type="password"]:focus {
+            outline: none;
+            border-color: #ff0066;
+            box-shadow: 0 0 0 4px rgba(255, 0, 102, 0.1);
+            background: #fff;
+        }
+
+        .popup-content input[type="password"]::placeholder {
+            color: #999;
+        }
+
+        /* Estilo de erro para o campo de senha */
+        .popup-content input[type="password"].error {
+            border-color: #ff3b3b;
+            background-color: #fff5f5;
+            animation: shake 0.4s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .error-message {
+            color: #ff3b3b;
+            font-size: 13px;
+            margin-top: 8px;
+            text-align: left;
+            font-weight: 500;
+            display: block;
+        }
+
+        /* Estilo ajustado para o retângulo de erro */
+        .error-box {
+            background: linear-gradient(135deg, #ff3b3b 0%, #d32f2f 100%);
+            color: white;
+            border: none;
+            padding: 14px 16px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            text-align: left;
+            font-size: 13px;
+            line-height: 1.5;
+            box-shadow: 0 4px 12px rgba(255, 59, 59, 0.3);
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .popup-content button {
+            background: linear-gradient(135deg, #ff0066 0%, #e6005c 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 14px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 0, 102, 0.4);
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.3px;
+        }
+
+        .popup-content button:hover {
+            background: linear-gradient(135deg, #e6005c 0%, #cc0052 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 102, 0.5);
+        }
+
+        .popup-content button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(255, 0, 102, 0.4);
+        }
+
+        .popup-content a {
+            display: block;
+            margin-top: 16px;
+            font-size: 14px;
+            text-decoration: none;
+            color: #666;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .popup-content a:hover {
+            color: #ff0066;
+        }
+
+        /* Responsividade */
+        @media (max-width: 480px) {
+            .popup-content {
+                padding: 30px 25px;
+                border-radius: 20px;
+            }
+
+            .popup-content img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .popup-content h2 {
+                font-size: 20px;
+            }
+
+            .popup-content p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="popup" id="quizPopup">
+        <div class="popup-content">
+            <img src="https://s3.canalwpp.com/previa/ftperfil.jpg" alt="Avatar">
+            <h2 id="questionTitle">Você tem mais de 18 anos?</h2>
+            <p id="questionText">Você quer ver meus conteúdos, mas antes me responda por favor</p>
+            <button id="confirmButton">Sim, eu tenho</button>
+            <a href="#" id="alternativeOption">Ainda não tenho 18 anos</a>
+        </div>
+    </div>
+
+    <script>
+        const quizQuestions = [
+            {
+                title: "Você tem mais de 18 anos?",
+                text: "Você quer ver meus conteúdos, mas antes me responda por favor",
+                buttonText: "Sim, eu tenho",
+                alternativeText: "Ainda não tenho 18 anos"
+            },
+            {
+                title: "Qual a sua senha amor?",
+                text: "Lembra? Passei uma senha exclusiva para você acessar meus contéudos",
+                buttonText: "ENTRAR",
+                alternativeText: "Esqueci minha senha",
+                inputPlaceholder: "Digite sua senha aqui..."
+            }
+        ];
+
+        let currentQuestion = 0;
+
+        const questionTitle = document.getElementById('questionTitle');
+        const questionText = document.getElementById('questionText');
+        const confirmButton = document.getElementById('confirmButton');
+        const alternativeOption = document.getElementById('alternativeOption');
+        let passwordInput;
+        const errorBox = document.createElement('div'); // Elemento para a mensagem de erro
+        const passwordError = document.createElement('div'); // Elemento para o erro de senha
+
+        // Função para carregar a próxima pergunta
+        function loadNextQuestion() {
+            currentQuestion++;
+
+            if (currentQuestion === 1) {
+                // Modificar a segunda pergunta
+                questionTitle.textContent = quizQuestions[currentQuestion].title;
+                questionText.textContent = quizQuestions[currentQuestion].text;
+
+                // Adicionar input de senha
+                passwordInput = document.createElement('input');
+                passwordInput.type = 'password';
+                passwordInput.placeholder = quizQuestions[currentQuestion].inputPlaceholder;
+                document.querySelector('.popup-content').insertBefore(passwordInput, confirmButton);
+
+                // Adicionar as mensagens de erro
+                errorBox.classList.add('error-box');
+                errorBox.style.display = 'none';
+                document.querySelector('.popup-content').insertBefore(errorBox, passwordInput);
+
+                passwordError.classList.add('error-message');
+                passwordError.style.display = 'none';
+                document.querySelector('.popup-content').insertBefore(passwordError, confirmButton);
+
+                confirmButton.textContent = quizQuestions[currentQuestion].buttonText;
+                alternativeOption.textContent = quizQuestions[currentQuestion].alternativeText;
+                alternativeOption.style.display = 'block'; // Manter o link visível na segunda pergunta
+
+                confirmButton.onclick = validatePassword;
+            }
+        }
+
+        // Função para validar a senha
+        function validatePassword() {
+            const userPassword = passwordInput.value;
+
+            if (userPassword === '2005') { // Exemplo de validação de senha
+                window.location.href = 'https://privacyroberta.vercel.app/meusconteudos';
+            } else {
+                // Exibir a mensagem de erro e destacar o campo de senha
+                errorBox.innerHTML = "Você digitou a senha errada. Por favor, verifique a senha que eu enviei via WhatsApp para você e tente novamente. Se continuar tendo problemas para realizar seu login, entre em contato comigo.";
+                errorBox.style.display = 'block';
+                passwordError.innerHTML = "Senha incorreta";
+                passwordError.style.display = 'block';
+                passwordInput.classList.add('error');
+            }
+        }
+
+        confirmButton.onclick = loadNextQuestion;
+        alternativeOption.onclick = function(event) {
+            event.preventDefault();
+            loadNextQuestion();
+        };
+    </script>
+
+</body>
+</html>
