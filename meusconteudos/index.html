@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conteúdos de Roberta Rosa</title>
-    
-    
+	
+	
 <!-- Meta Pixel Code -->
 <script>
   !function(f,b,e,v,n,t,s)
@@ -166,6 +166,34 @@
             z-index: 1;
         }
 
+        .description-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 0 auto 20px auto;
+            max-width: 1400px;
+            backdrop-filter: blur(10px);
+        }
+
+        .description-box p {
+            margin: 0;
+            color: #fff;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .description-box .warning {
+            color: #ffd700;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .description-box .message {
+            color: #e0e0e0;
+        }
+
         .media-filters {
             display: flex;
             gap: 10px;
@@ -254,6 +282,17 @@
             display: block;
             border-radius: 16px;
             background: #000;
+        }
+
+        /* Permite tela cheia no mobile */
+        .content-item video::-webkit-media-controls-fullscreen-button {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .content-item video {
+                border-radius: 0;
+            }
         }
 
         .content-item img {
@@ -383,6 +422,15 @@
 
         /* Responsividade */
         @media (max-width: 768px) {
+            .description-box {
+                padding: 16px;
+                margin-bottom: 16px;
+            }
+
+            .description-box p {
+                font-size: 13px;
+            }
+
             .content-grid {
                 grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
                 gap: 12px;
@@ -439,6 +487,10 @@
     </div>
 
     <div class="content-section" id="contentSection">
+        <div class="description-box">
+            <p class="warning">Aviso: para ver meus vídeos horizontal em tela cheia, basta clicar nos (...) e depois em "tela cheia"</p>
+            <p class="message">Não vejo a hora de fazer você gozar gostoso pra um vídeo ou fotinha minha hahaha 🥰🔥</p>
+        </div>
         <div class="media-filters">
             <button class="filter-button active" data-filter="all">Tudo</button>
             <button class="filter-button" data-filter="video">Vídeos</button>
@@ -447,188 +499,290 @@
         <div class="content-grid">
         <!-- Inserção dos vídeos -->
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video1.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video2.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video3.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video4.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video5.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video6.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video7.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video8.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video9.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video10.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video11.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video12.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video13.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video14.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video15.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video16.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video17.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video18.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video19.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video20.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video21.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video22.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video23.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video24.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video25.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video26.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video27.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video28.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video29.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video30.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
         <div class="content-item">
-            <video controls>
+            <video controls playsinline webkit-playsinline>
                 <source src="https://s3.canalwpp.com/conteudo/video31.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video32.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video33.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video34.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video35.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video36.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video37.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video38.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video39.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video40.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video41.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video42.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video43.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video44.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video45.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video46.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video47.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
+        <div class="content-item">
+            <video controls playsinline webkit-playsinline>
+                <source src="https://s3.canalwpp.com/conteudo/video48.mp4" type="video/mp4">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
         </div>
