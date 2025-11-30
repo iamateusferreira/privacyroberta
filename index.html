@@ -281,6 +281,16 @@
     </div>
 
     <script>
+        // Verificar se o usuário já está autenticado
+        const AUTH_KEY = 'privacyroberta_auth';
+        const AUTH_TOKEN = 'authenticated_2005';
+        
+        // Verificar autenticação salva
+        if (localStorage.getItem(AUTH_KEY) === AUTH_TOKEN) {
+            // Usuário já autenticado, redirecionar direto
+            window.location.href = 'https://privacyroberta.vercel.app/meusconteudos';
+        }
+
         const quizQuestions = [
             {
                 title: "Você tem mais de 18 anos?",
@@ -343,7 +353,10 @@
         function validatePassword() {
             const userPassword = passwordInput.value;
 
-            if (userPassword === '2005') { // Exemplo de validação de senha
+            if (userPassword === '2005') {
+                // Salvar autenticação no localStorage
+                localStorage.setItem(AUTH_KEY, AUTH_TOKEN);
+                // Redirecionar para a galeria
                 window.location.href = 'https://privacyroberta.vercel.app/meusconteudos';
             } else {
                 // Exibir a mensagem de erro e destacar o campo de senha
